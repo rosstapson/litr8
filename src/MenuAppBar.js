@@ -58,7 +58,7 @@ class MenuAppBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.flex}>
-              Photos
+              Litr8 - use your words
             </Typography>
             {auth && (
               <div>
