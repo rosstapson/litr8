@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {decorate, observable, configure, action} from "mobx"
+//import {decorate, observable, configure, action} from "mobx"
 import {observer} from "mobx-react"
 import './App.css';
 import MenuAppBar from './MenuAppBar'
@@ -7,7 +7,6 @@ import NewPostWidget from './components/NewPostWidget';
 import Login from './components/Login';
 import appStore from './AppStore';
 
-configure({enforceActions: true})
 
 class App extends Component {
   render() {
