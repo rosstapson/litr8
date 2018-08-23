@@ -5,6 +5,8 @@ import './App.css';
 import MenuAppBar from './MenuAppBar'
 import NewPostWidget from './components/NewPostWidget';
 import Login from './components/Login';
+import UserList from './components/UserList';
+import PostList from './components/PostList';
 import appStore from './AppStore';
 
 
@@ -18,7 +20,9 @@ class App extends Component {
     return (
       <div className="App">
         <MenuAppBar store={appStore} />
-        <NewPostWidget store={appStore} />         
+        <NewPostWidget store={appStore} />
+        <UserList store={appStore} />
+        <PostList store={appStore} />
       </div>
     );
   }

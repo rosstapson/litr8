@@ -1,15 +1,30 @@
-import {decorate, observable, configure, action} from "mobx"
+import {decorate, observable, configure, action} from "mobx";
+import axios from 'axios';
+import { apiUri } from './config';
 
 configure({enforceActions: true})
 
 class Store {
-    user = '';
-    token = '';
+  constructor(props) {
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';      
+    this.api = axios.create({
+        baseURL: apiUri
+    })
+    this.user = '';
+    this.token = '';
+  }
+    
     login(user) {
       this.user = user;
     }
     logout() {
       this.user = '';
+    }
+    getUsers() {
+      return this.api.get('/users');
+    }
+    getPosts() {
+      return this.api.get('/posts');
     }
   }
   
